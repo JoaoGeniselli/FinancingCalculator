@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Financing Calculator</string>
+    <string name="hint_vehicle_total_value">Valor total do veículo</string>
+    <string name="hint_initial_value">Valor de entrada</string>
+    <string name="hint_interest_per_month">Porcentagem de juros ao mês</string>
+    <string name="hint_installments">Parcelas</string>
+    <string name="calculate">Calcular</string>
+    <string name="form_title">Dados do financiamento</string>
+    <string name="results_title">Simulação do financiamento</string>
+    <string name="results_total">Total a ser pago</string>
+    <string name="results_original_value">Valor original</string>
+    <string name="results_financing_input">Entrada</string>
+    <string name="results_installment_value">Valor da parcela</string>
+    <string name="results_financing_value">Valor financiado</string>
+    <string name="results_diff">Diferença do valor à vista</string>
+    <string name="copy">Copiar</string>
+    <string name="error_required_field">Este campo é obrigatório</string>
+</resources>

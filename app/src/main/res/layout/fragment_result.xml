@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="ContentDescription">
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/Text.Title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_2x"
+        android:layout_marginTop="@dimen/margin_4x"
+        android:text="@string/results_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Original value -->
+
+    <TextView
+        android:id="@+id/label_original_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_2x"
+        android:layout_marginTop="@dimen/margin_2x"
+        android:text="@string/results_original_value"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <TextView
+        android:id="@+id/original_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_2x"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/label_original_value"
+        tools:text="R$75.000,00" />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="3dp"
+        android:layout_marginHorizontal="@dimen/margin_default"
+        android:layout_marginBottom="3dp"
+        android:src="@drawable/line_dotted_black"
+        app:layout_constraintBottom_toBottomOf="@id/label_original_value"
+        app:layout_constraintEnd_toStartOf="@id/original_value"
+        app:layout_constraintStart_toEndOf="@id/label_original_value" />
+
+    <!--  Financing Input  -->
+
+    <TextView
+        android:id="@+id/label_financing_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_2x"
+        android:layout_marginTop="@dimen/margin_default"
+        android:text="@string/results_financing_input"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_original_value" />
+
+    <TextView
+        android:id="@+id/financing_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_2x"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/label_financing_input"
+        tools:text="R$40.000,00" />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="3dp"
+        android:layout_marginHorizontal="@dimen/margin_default"
+        android:layout_marginBottom="3dp"
+        android:src="@drawable/line_dotted_black"
+        app:layout_constraintBottom_toBottomOf="@id/label_financing_input"
+        app:layout_constraintEnd_toStartOf="@id/financing_input"
+        app:layout_constraintStart_toEndOf="@id/label_financing_input" />
+
+    <!--  Installment value  -->
+
+    <TextView
+        android:id="@+id/label_installment_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_2x"
+        android:layout_marginTop="@dimen/margin_default"
+        android:text="@string/results_installment_value"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_financing_input" />
+
+    <TextView
+        android:id="@+id/installment_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_2x"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/label_installment_value"
+        tools:text="R$2.000,00" />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="3dp"
+        android:layout_marginHorizontal="@dimen/margin_default"
+        android:layout_marginBottom="3dp"
+        android:src="@drawable/line_dotted_black"
+        app:layout_constraintBottom_toBottomOf="@id/installment_value"
+        app:layout_constraintEnd_toStartOf="@id/installment_value"
+        app:layout_constraintStart_toEndOf="@id/label_installment_value" />
+
+    <!--  Financing value  -->
+
+    <TextView
+        android:id="@+id/label_financing_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_2x"
+        android:layout_marginTop="@dimen/margin_default"
+        android:text="@string/results_financing_value"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_installment_value" />
+
+    <TextView
+        android:id="@+id/financing_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_2x"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/label_financing_value"
+        tools:text="R$35.000,00" />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="3dp"
+        android:layout_marginHorizontal="@dimen/margin_default"
+        android:layout_marginBottom="3dp"
+        android:src="@drawable/line_dotted_black"
+        app:layout_constraintBottom_toBottomOf="@id/financing_value"
+        app:layout_constraintEnd_toStartOf="@id/financing_value"
+        app:layout_constraintStart_toEndOf="@id/label_financing_value" />
+
+    <!--  Line  -->
+
+    <ImageView
+        android:id="@+id/line"
+        app:layout_constraintTop_toBottomOf="@id/label_financing_value"
+        android:src="@drawable/line_black"
+        android:layout_marginTop="@dimen/margin_2x"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginHorizontal="@dimen/margin_2x"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="2dp"/>
+
+    <!--  Total  -->
+
+    <TextView
+        android:id="@+id/label_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_2x"
+        android:layout_marginTop="@dimen/margin_default"
+        android:text="@string/results_total"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line" />
+
+    <TextView
+        android:id="@+id/total_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_2x"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/label_total"
+        tools:text="R$98.500,00" />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="3dp"
+        android:layout_marginHorizontal="@dimen/margin_default"
+        android:layout_marginBottom="3dp"
+        android:src="@drawable/line_dotted_black"
+        app:layout_constraintBottom_toBottomOf="@id/total_value"
+        app:layout_constraintEnd_toStartOf="@id/total_value"
+        app:layout_constraintStart_toEndOf="@id/label_total" />
+
+    <!--  Diff  -->
+
+    <TextView
+        android:id="@+id/label_diff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_2x"
+        android:layout_marginTop="@dimen/margin_default"
+        android:text="@string/results_diff"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_total" />
+
+    <TextView
+        android:id="@+id/diff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_2x"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/label_diff"
+        tools:text="R$23.500,00" />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="3dp"
+        android:layout_marginHorizontal="@dimen/margin_default"
+        android:layout_marginBottom="3dp"
+        android:src="@drawable/line_dotted_black"
+        app:layout_constraintBottom_toBottomOf="@id/diff"
+        app:layout_constraintEnd_toStartOf="@id/diff"
+        app:layout_constraintStart_toEndOf="@id/label_diff" />
+
+    <Button
+        android:id="@+id/button_calculate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_2x"
+        android:layout_marginBottom="@dimen/margin_4x"
+        android:text="@string/copy"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
