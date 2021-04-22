@@ -1,8 +1,11 @@
-package com.learning.financingcalculator
+package com.learning.financingcalculator.presentation
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.learning.financingcalculator.toolbox.Event
+import com.learning.financingcalculator.model.FinancingFormData
+import com.learning.financingcalculator.model.ResultValues
 
 class CalculatorViewModel : ViewModel() {
 
@@ -22,15 +25,15 @@ class CalculatorViewModel : ViewModel() {
     fun onCalculateClicked(data: FinancingFormData) {
         val financingValue = data.originalValue - data.inputValue
         val installments = financingValue / data.installments
-        val installmentsWithInterest = installments + installments * data.interestPercentByMonth
-        val total = (installmentsWithInterest * data.installments * data.interestPercentByMonth) + data.inputValue
+        val installmentsWithInterest = installments + (financingValue * data.interestPercentByMonth / 100)
+        val total = (installmentsWithInterest * data.installments) + data.inputValue
         val diff = total - data.originalValue
 
         _results.value = ResultValues(
             original = data.originalValue,
             input = data.inputValue,
             financing = financingValue,
-            installments = installments,
+            installments = installmentsWithInterest,
             diff = diff,
             total = total
         )

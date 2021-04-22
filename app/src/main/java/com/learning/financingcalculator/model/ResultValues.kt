@@ -1,4 +1,4 @@
-package com.learning.financingcalculator
+package com.learning.financingcalculator.model
 
 data class ResultValues(
     val original: Double,

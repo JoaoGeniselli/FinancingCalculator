@@ -1,4 +1,4 @@
-package com.learning.financingcalculator
+package com.learning.financingcalculator.presentation
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import com.learning.financingcalculator.model.ResultValues
 import com.learning.financingcalculator.databinding.FragmentResultBinding
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import java.text.NumberFormat

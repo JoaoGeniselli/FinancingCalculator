@@ -1,4 +1,4 @@
-package com.learning.financingcalculator
+package com.learning.financingcalculator.model
 
 class FinancingFormData(
     val originalValue: Double,

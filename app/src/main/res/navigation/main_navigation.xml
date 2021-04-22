@@ -5,7 +5,7 @@
 
     <fragment
         android:id="@+id/formFragment"
-        android:name="com.learning.financingcalculator.FormFragment"
+        android:name="com.learning.financingcalculator.presentation.FormFragment"
         android:label="FormFragment" >
         <action
             android:id="@+id/action_formFragment_to_resultFragment"
@@ -13,6 +13,6 @@
     </fragment>
     <fragment
         android:id="@+id/resultFragment"
-        android:name="com.learning.financingcalculator.ResultFragment"
+        android:name="com.learning.financingcalculator.presentation.ResultFragment"
         android:label="ResultFragment" />
 </navigation>

@@ -1,9 +1,10 @@
-package com.learning.financingcalculator
+package com.learning.financingcalculator.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
+import com.learning.financingcalculator.R
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
@@ -17,6 +18,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun openResults() {
-        findNavController(R.id.container).navigate(R.id.action_formFragment_to_resultFragment)
+        findNavController(R.id.container).navigate(
+            R.id.action_formFragment_to_resultFragment
+        )
     }
 }

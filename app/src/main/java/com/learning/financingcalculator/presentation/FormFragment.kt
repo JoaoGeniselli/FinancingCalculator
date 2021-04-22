@@ -1,4 +1,4 @@
-package com.learning.financingcalculator
+package com.learning.financingcalculator.presentation
 
 import android.os.Bundle
 import android.text.Editable
@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.google.android.material.textfield.TextInputLayout
+import com.learning.financingcalculator.model.FinancingFormData
 import com.learning.financingcalculator.databinding.FragmentFormBinding
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 

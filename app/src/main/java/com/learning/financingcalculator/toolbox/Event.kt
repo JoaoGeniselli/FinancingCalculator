@@ -1,4 +1,4 @@
-package com.learning.financingcalculator
+package com.learning.financingcalculator.toolbox
 
 open class Event<out T>(private val content: T) {
 
