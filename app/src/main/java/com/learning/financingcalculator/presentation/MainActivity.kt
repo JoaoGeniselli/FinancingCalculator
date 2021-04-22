@@ -1,6 +1,8 @@
 package com.learning.financingcalculator.presentation
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
@@ -21,5 +23,18 @@ class MainActivity : AppCompatActivity() {
         findNavController(R.id.container).navigate(
             R.id.action_formFragment_to_resultFragment
         )
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.reset) {
+            viewModel.onResetClicked()
+            return true
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

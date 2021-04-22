@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Financing Calculator</string>
+    <string name="app_name">Calculadora de Financiamento</string>
     <string name="hint_vehicle_total_value">Valor total do veículo</string>
     <string name="hint_initial_value">Valor de entrada</string>
     <string name="hint_interest_per_month">Porcentagem de juros ao mês</string>
@@ -15,4 +15,5 @@
     <string name="results_diff">Diferença do valor à vista</string>
     <string name="copy">Copiar</string>
     <string name="error_required_field">Este campo é obrigatório</string>
+    <string name="reset">Reiniciar</string>
 </resources>
