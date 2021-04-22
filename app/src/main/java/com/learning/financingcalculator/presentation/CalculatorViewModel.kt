@@ -25,7 +25,7 @@ class CalculatorViewModel : ViewModel() {
     fun onCalculateClicked(data: FinancingFormData) {
         val financingValue = data.originalValue - data.inputValue
         val installments = financingValue / data.installments
-        val installmentsWithInterest = installments + (financingValue * data.interestPercentByMonth / 100)
+        val installmentsWithInterest = installments + (data.originalValue * data.interestPercentByMonth / 100)
         val total = (installmentsWithInterest * data.installments) + data.inputValue
         val diff = total - data.originalValue
 
