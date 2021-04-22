@@ -3,11 +3,16 @@ package com.learning.financingcalculator.presentation
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.learning.financingcalculator.model.CalculateResult
 import com.learning.financingcalculator.toolbox.Event
 import com.learning.financingcalculator.model.FinancingFormData
 import com.learning.financingcalculator.model.ResultValues
+import kotlinx.coroutines.launch
 
-class CalculatorViewModel : ViewModel() {
+class CalculatorViewModel(
+    private val calculateResult: CalculateResult
+) : ViewModel() {
 
     private val _results = MutableLiveData<ResultValues>()
     val results: LiveData<ResultValues> get() = _results
@@ -23,20 +28,9 @@ class CalculatorViewModel : ViewModel() {
     }
 
     fun onCalculateClicked(data: FinancingFormData) {
-        val financingValue = data.originalValue - data.inputValue
-        val installments = financingValue / data.installments
-        val installmentsWithInterest = installments + (data.originalValue * data.interestPercentByMonth / 100)
-        val total = (installmentsWithInterest * data.installments) + data.inputValue
-        val diff = total - data.originalValue
-
-        _results.value = ResultValues(
-            original = data.originalValue,
-            input = data.inputValue,
-            financing = financingValue,
-            installments = installmentsWithInterest,
-            diff = diff,
-            total = total
-        )
+        viewModelScope.launch {
+            _results.value = calculateResult.calculate(data)
+        }
     }
 
     fun onCopyClicked() {
