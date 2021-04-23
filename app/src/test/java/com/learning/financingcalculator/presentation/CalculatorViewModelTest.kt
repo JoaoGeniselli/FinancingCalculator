@@ -5,8 +5,10 @@ import com.learning.financingcalculator.CoroutineTestRule
 import com.learning.financingcalculator.model.CalculateResult
 import com.learning.financingcalculator.model.FinancingFormData
 import com.learning.financingcalculator.model.ResultValues
-import io.mockk.*
-import org.junit.Assert.*
+import io.mockk.every
+import io.mockk.mockk
+import io.mockk.verify
+import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test

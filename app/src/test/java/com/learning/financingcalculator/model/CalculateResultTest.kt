@@ -1,7 +1,9 @@
 package com.learning.financingcalculator.model
 
 import junit.framework.Assert.assertEquals
+import org.junit.After
 import org.junit.Before
+import org.junit.BeforeClass
 import org.junit.Test
 
 class CalculateResultTest {
@@ -30,5 +32,16 @@ class CalculateResultTest {
         assertEquals(2000.0, result.installments)
         assertEquals(200000.0, result.total)
         assertEquals(100000.0, result.diff)
+    }
+
+    @Test(expected = IllegalArgumentException::class)
+    fun `test validation`() {
+        val data = FinancingFormData(
+            originalValue = 100000.0,
+            inputValue = 120000.0,
+            installments = 100,
+            interestPercentByMonth = 1.0
+        )
+        calculateResult.calculate(data)
     }
 }
