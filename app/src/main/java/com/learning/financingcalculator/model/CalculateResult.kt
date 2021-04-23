@@ -3,11 +3,7 @@ package com.learning.financingcalculator.model
 class CalculateResult {
 
     fun calculate(data: FinancingFormData) : ResultValues {
-        if (data.inputValue > data.originalValue) {
-            throw IllegalArgumentException(
-                "O valor de entrada não pode ser maior que o total do veículo"
-            )
-        }
+        validate(data)
 
         val financingValue = data.originalValue - data.inputValue
         val installments = financingValue / data.installments
@@ -23,5 +19,13 @@ class CalculateResult {
             diff = diff,
             total = total
         )
+    }
+
+    private fun validate(data: FinancingFormData) {
+        if (data.inputValue > data.originalValue) {
+            throw IllegalArgumentException(
+                "O valor de entrada não pode ser maior que o total do veículo"
+            )
+        }
     }
 }

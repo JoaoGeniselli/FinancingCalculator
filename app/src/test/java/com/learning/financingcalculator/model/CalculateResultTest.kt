@@ -1,9 +1,7 @@
 package com.learning.financingcalculator.model
 
 import junit.framework.Assert.assertEquals
-import org.junit.After
 import org.junit.Before
-import org.junit.BeforeClass
 import org.junit.Test
 
 class CalculateResultTest {
@@ -17,15 +15,13 @@ class CalculateResultTest {
 
     @Test
     fun `test results`() {
-        val data = FinancingFormData(
-            originalValue = 100000.0,
-            inputValue = 0.0,
-            installments = 100,
-            interestPercentByMonth = 1.0
-        )
+        // Given
+        val data = makeFormData(input = 0.0)
 
+        // When
         val result = calculateResult.calculate(data)
 
+        // Then
         assertEquals(100000.0, result.original)
         assertEquals(0.0, result.input)
         assertEquals(100000.0, result.financing)
@@ -36,12 +32,19 @@ class CalculateResultTest {
 
     @Test(expected = IllegalArgumentException::class)
     fun `test validation`() {
-        val data = FinancingFormData(
-            originalValue = 100000.0,
-            inputValue = 120000.0,
-            installments = 100,
-            interestPercentByMonth = 1.0
-        )
+        // Given
+        val data = makeFormData(input = 120000.0)
+
+        // When
         calculateResult.calculate(data)
+
+        // Then: Exception
     }
+
+    private fun makeFormData(input: Double) = FinancingFormData(
+        originalValue = 100000.0,
+        inputValue = input,
+        installments = 100,
+        interestPercentByMonth = 1.0
+    )
 }

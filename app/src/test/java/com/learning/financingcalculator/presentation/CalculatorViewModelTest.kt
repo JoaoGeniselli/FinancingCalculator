@@ -32,25 +32,32 @@ class CalculatorViewModelTest {
 
     @Test
     fun `test result calculation`() {
-        val result = ResultValues(
-            original = 0.0,
-            financing = 0.0,
-            installments = 0.0,
-            total = 0.0,
-            diff = 0.0,
-            input = 0.0
-        )
-        val input = FinancingFormData(
-            originalValue = 0.0,
-            installments = 0,
-            interestPercentByMonth = 0.0,
-            inputValue = 0.0
-        )
+        // Given
+        val input = mockInput()
+        val result = mockResult()
         every { useCase.calculate(input) } returns result
 
+        // When
         viewModel.onCalculateClicked(input)
 
+        // Then
         assertEquals(result, viewModel.results.value)
         verify { useCase.calculate(input) }
     }
+
+    private fun mockInput() = FinancingFormData(
+        originalValue = 0.0,
+        installments = 0,
+        interestPercentByMonth = 0.0,
+        inputValue = 0.0
+    )
+
+    private fun mockResult() = ResultValues(
+        original = 0.0,
+        financing = 0.0,
+        installments = 0.0,
+        total = 0.0,
+        diff = 0.0,
+        input = 0.0
+    )
 }
